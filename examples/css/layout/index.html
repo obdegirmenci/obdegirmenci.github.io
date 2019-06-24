@@ -18,10 +18,10 @@
         
         .contents { width: 80%; margin: auto; padding-top: 40px; }
         
-        .container-one, .container-two, .container-three, .container-four { background: #f3f3f3; border: 1px solid #ddd; box-shadow: 0 2px 6px #ddd; margin-bottom: 40px; padding: 20px }
+        .container-one, .container-two, .container-three, .container-four, .container-five { background: #f3f3f3; border: 1px solid #ddd; box-shadow: 0 2px 6px #ddd; margin-bottom: 40px; padding: 20px }
 
-        .item-one, .item-two, .item-three, .item-four { background: #eee; border-width: 1px; border-style: dashed; margin: 5px; padding: 10px }
-        .item-one, .item-two, .item-three { width: 150px }
+        .item-one, .item-two, .item-three, .item-four, .item-five { background: #eee; border-width: 1px; border-style: dashed; margin: 5px; padding: 10px }
+        .item-one, .item-two, .item-three, .item-five { width: 150px }
         
         /* FLEX */
         .container-one { display: flex; flex-direction: row-reverse; justify-content: right; align-items: center; flex-wrap: wrap }
@@ -41,6 +41,14 @@
         .item-four:nth-child(1) { grid-column: 1 / 6; grid-row: 1 / 2 }
         .item-four:nth-child(2) { grid-column: 1 / 6; grid-row: 3 / 4 }
         .item-four:nth-child(3) { grid-column: 4 / 6; grid-row: 2 / 3 }
+
+        /* POSITION */
+        .container-five { height: 650px; position: relative }
+        .item-five { position: absolute }
+        .item-five:nth-child(1) { top: 0; left: 100px }
+        .item-five:nth-child(2) { top: 80px; left: 300px }
+        .item-five:nth-child(3) { top: 0; left: 500px }
+        .item-five:nth-child(4) { bottom: 0; left: 700px }
     </style>
 </head>
 
@@ -165,6 +173,34 @@
                     </p>
                 </div>
                 <div class="item-four">
+                    <p>4</p>
+                    <p>
+                        Donec facilisis, elit et consectetur posuere, justo augue maximus quam, vitae tincidunt leo neque at libero. Etiam ornare a eros efficitur vulputate. Mauris ex est, maximus vel fringilla sed, lacinia et magna.
+                    </p>
+                </div>
+        </article>
+
+        <h2 class="method-header">#5 POSITION</h2>
+        <article class="container-five">
+                <div class="item-five">
+                    <p>1</p>
+                    <p>
+                        Aliquam non ex libero. Phasellus ex leo, finibus id massa ac, tempor ultrices massa. Suspendisse in vestibulum lacus, fermentum congue tortor. Morbi faucibus sem sed scelerisque posuere. Sed ultrices purus arcu, eu dictum nulla euismod at. Nullam quis fermentum velit, nec semper lorem. Quisque condimentum efficitur mi a finibus. Praesent sit amet ultrices elit. Phasellus diam enim, gravida a commodo et, bibendum at enim. Proin suscipit dignissim orci, nec tempus metus condimentum ut. Cras tincidunt congue magna, quis feugiat sem fringilla eu.
+                    </p>
+                </div>
+                <div class="item-five smalltext">
+                    <p>2</p>
+                    <p>
+                        Aenean eleifend dolor non suscipit ornare. Etiam placerat ante quis commodo ullamcorper. Nunc dapibus augue ut viverra finibus. Morbi id nunc ut nisl bibendum convallis et eget purus. Pellentesque id lorem tortor. In vel semper justo. Proin ultrices tristique commodo. Praesent volutpat rutrum risus quis hendrerit. Donec feugiat et tellus a hendrerit.
+                    </p>
+                </div>
+                <div class="item-five bigtext">
+                    <p>3</p>
+                    <p>
+                        Donec mauris massa, scelerisque eu venenatis vel, posuere sit amet elit. Nunc commodo quis justo pellentesque feugiat.
+                    </p>
+                </div>
+                <div class="item-five">
                     <p>4</p>
                     <p>
                         Donec facilisis, elit et consectetur posuere, justo augue maximus quam, vitae tincidunt leo neque at libero. Etiam ornare a eros efficitur vulputate. Mauris ex est, maximus vel fringilla sed, lacinia et magna.
