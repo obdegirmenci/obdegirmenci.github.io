@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout Practises</title>
+
+    <style>
+        html { font-size: 10px; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0 }
+        body { background: #eee; font-family: Arial, Helvetica, sans-serif; font-size: 1.4rem }
+        .method-header { font-size: 1.6rem; font-weight: normal; color: #888 }
+        .method-header::first-letter { font-size: 2rem; font-weight: bold; color: #666 }
+
+        .smalltext { font-size: 0.9rem }
+        .bigtext { font-size: 2rem }
+        
+        .contents { width: 80%; margin: auto; padding-top: 40px; }
+        
+        .container-one, .container-two, .container-three, .container-four { background: #f3f3f3; border: 1px solid #ddd; box-shadow: 0 2px 6px #ddd; margin-bottom: 40px; padding: 20px }
+
+        .item-one, .item-two, .item-three, .item-four { background: #eee; border-width: 1px; border-style: dashed; margin: 5px; padding: 10px }
+        .item-one, .item-two, .item-three { width: 150px }
+        
+        /* FLEX */
+        .container-one { display: flex; flex-direction: row-reverse; justify-content: right; align-items: center; flex-wrap: wrap }
+        .item-one { border-color: rgb(230, 0, 0) }
+        
+        /* FLOAT */
+        .container-two { width: 100%; display: inline-block; box-sizing: border-box }
+        .item-two { border-color: rgb(0, 160, 235); float: right}
+        
+        /* DISPLAY-INLINE */
+        .container-three { text-align: right; }
+        .item-three { border-color: rgb(92, 92, 92); text-align: left; display: inline-block; vertical-align: middle}
+        
+        /* GRID */
+        .container-four { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(3, 0.5fr) }
+        .item-four { border-color: rgb(11, 206, 108) }
+        .item-four:nth-child(1) { grid-column: 1 / 6; grid-row: 1 / 2 }
+        .item-four:nth-child(2) { grid-column: 1 / 6; grid-row: 3 / 4 }
+        .item-four:nth-child(3) { grid-column: 4 / 6; grid-row: 2 / 3 }
+    </style>
+</head>
+
+<body>
+
+    <main class="contents">
+        
+        <h2 class="method-header">#1 FLEX</h2>
+        <article class="container-one">
+            <div class="item-one">
+                    <p>1</p>
+                    <p>
+                        Aliquam non ex libero. Phasellus ex leo, finibus id massa ac, tempor ultrices massa. Suspendisse in vestibulum lacus, fermentum congue tortor. Morbi faucibus sem sed scelerisque posuere. Sed ultrices purus arcu, eu dictum nulla euismod at. Nullam quis fermentum velit, nec semper lorem. Quisque condimentum efficitur mi a finibus. Praesent sit amet ultrices elit. Phasellus diam enim, gravida a commodo et, bibendum at enim. Proin suscipit dignissim orci, nec tempus metus condimentum ut. Cras tincidunt congue magna, quis feugiat sem fringilla eu.
+                    </p>
+                </div>
+                <div class="item-one smalltext">
+                    <p>2</p>
+                    <p>
+                        Aenean eleifend dolor non suscipit ornare. Etiam placerat ante quis commodo ullamcorper. Nunc dapibus augue ut viverra finibus. Morbi id nunc ut nisl bibendum convallis et eget purus. Pellentesque id lorem tortor. In vel semper justo. Proin ultrices tristique commodo. Praesent volutpat rutrum risus quis hendrerit. Donec feugiat et tellus a hendrerit.
+                    </p>
+                </div>
+                <div class="item-one bigtext">
+                    <p>3</p>
+                    <p>
+                        Donec mauris massa, scelerisque eu venenatis vel, posuere sit amet elit. Nunc commodo quis justo pellentesque feugiat.
+                    </p>
+                </div>
+                <div class="item-one">
+                    <p>4</p>
+                    <p>
+                        Donec facilisis, elit et consectetur posuere, justo augue maximus quam, vitae tincidunt leo neque at libero. Etiam ornare a eros efficitur vulputate. Mauris ex est, maximus vel fringilla sed, lacinia et magna.
+                    </p>
+                </div>
+        </article>
+
+        <h2 class="method-header">#2 FLOAT</h2>
+        <article class="container-two">
+            <div class="item-two">
+                <p>1</p>
+                <p>
+                    Aliquam non ex libero. Phasellus ex leo, finibus id massa ac, tempor ultrices massa. Suspendisse in vestibulum lacus, fermentum congue tortor. Morbi faucibus sem sed scelerisque posuere. Sed ultrices purus arcu, eu dictum nulla euismod at. Nullam quis fermentum velit, nec semper lorem. Quisque condimentum efficitur mi a finibus. Praesent sit amet ultrices elit. Phasellus diam enim, gravida a commodo et, bibendum at enim. Proin suscipit dignissim orci, nec tempus metus condimentum ut. Cras tincidunt congue magna, quis feugiat sem fringilla eu.
+                </p>
+            </div>
+            <div class="item-two">
+                <p>2</p>
+                <p>
+                    Aenean eleifend dolor non suscipit ornare. Etiam placerat ante quis commodo ullamcorper. Nunc dapibus augue ut viverra finibus. Morbi id nunc ut nisl bibendum convallis et eget purus. Pellentesque id lorem tortor. In vel semper justo. Proin ultrices tristique commodo. Praesent volutpat rutrum risus quis hendrerit. Donec feugiat et tellus a hendrerit.
+                </p>
+            </div>
+            <div class="item-two">
+                <p>3</p>
+                <p>
+                    Donec mauris massa, scelerisque eu venenatis vel, posuere sit amet elit. Nunc commodo quis justo pellentesque feugiat.
+                </p>
+            </div>
+            <div class="item-two">
+                <p>4</p>
+                <p>
+                    Donec facilisis, elit et consectetur posuere, justo augue maximus quam, vitae tincidunt leo neque at libero. Etiam ornare a eros efficitur vulputate. Mauris ex est, maximus vel fringilla sed, lacinia et magna.
+                </p>
+            </div>
+        </article>
+
+        <h2 class="method-header">#3 INLINE-BLOCK</h2>
+        <article class="container-three">
+                <div class="item-three">
+                    <p>1</p>
+                    <p>
+                        Aliquam non ex libero. Phasellus ex leo, finibus id massa ac, tempor ultrices massa. Suspendisse in vestibulum lacus, fermentum congue tortor. Morbi faucibus sem sed scelerisque posuere. Sed ultrices purus arcu, eu dictum nulla euismod at. Nullam quis fermentum velit, nec semper lorem. Quisque condimentum efficitur mi a finibus. Praesent sit amet ultrices elit. Phasellus diam enim, gravida a commodo et, bibendum at enim. Proin suscipit dignissim orci, nec tempus metus condimentum ut. Cras tincidunt congue magna, quis feugiat sem fringilla eu.
+                    </p>
+                </div>
+                <div class="item-three smalltext">
+                    <p>2</p>
+                    <p>
+                        Aenean eleifend dolor non suscipit ornare. Etiam placerat ante quis commodo ullamcorper. Nunc dapibus augue ut viverra finibus. Morbi id nunc ut nisl bibendum convallis et eget purus. Pellentesque id lorem tortor. In vel semper justo. Proin ultrices tristique commodo. Praesent volutpat rutrum risus quis hendrerit. Donec feugiat et tellus a hendrerit.
+                    </p>
+                </div>
+                <div class="item-three bigtext">
+                    <p>3</p>
+                    <p>
+                        Donec mauris massa, scelerisque eu venenatis vel, posuere sit amet elit. Nunc commodo quis justo pellentesque feugiat.
+                    </p>
+                </div>
+                <div class="item-three">
+                    <p>4</p>
+                    <p>
+                        Donec facilisis, elit et consectetur posuere, justo augue maximus quam, vitae tincidunt leo neque at libero. Etiam ornare a eros efficitur vulputate. Mauris ex est, maximus vel fringilla sed, lacinia et magna.
+                    </p>
+                </div>
+        </article>
+
+        <h2 class="method-header">#4 GRID</h2>
+        <article class="container-four">
+                <div class="item-four">
+                    <p>HEADER</p>
+                    <p>
+                        Proin ornare nisi id dolor mattis, ut imamoğlu ex varius.
+                    </p>
+                </div>
+                <div class="item-four">
+                    <p>FOOTER</p>
+                    <p>
+                        Maecenas binali ut nibh et vestibulum.
+                    </p>
+                </div>
+                <div class="item-four">
+                    <p>1</p>
+                    <p>
+                        Aliquam non ex libero. Phasellus ex leo, finibus id massa ac, tempor ultrices massa. Suspendisse in vestibulum lacus, fermentum congue tortor. Morbi faucibus sem sed scelerisque posuere. Sed ultrices purus arcu, eu dictum nulla euismod at. Nullam quis fermentum velit, nec semper lorem. Quisque condimentum efficitur mi a finibus. Praesent sit amet ultrices elit. Phasellus diam enim, gravida a commodo et, bibendum at enim. Proin suscipit dignissim orci, nec tempus metus condimentum ut. Cras tincidunt congue magna, quis feugiat sem fringilla eu.
+                    </p>
+                </div>
+                <div class="item-four smalltext">
+                    <p>2</p>
+                    <p>
+                        Aenean eleifend dolor non suscipit ornare. Etiam placerat ante quis commodo ullamcorper. Nunc dapibus augue ut viverra finibus. Morbi id nunc ut nisl bibendum convallis et eget purus. Pellentesque id lorem tortor. In vel semper justo. Proin ultrices tristique commodo. Praesent volutpat rutrum risus quis hendrerit. Donec feugiat et tellus a hendrerit.
+                    </p>
+                </div>
+                <div class="item-four bigtext">
+                    <p>3</p>
+                    <p>
+                        Donec mauris massa, scelerisque eu venenatis vel, posuere sit amet elit. Nunc commodo quis justo pellentesque feugiat.
+                    </p>
+                </div>
+                <div class="item-four">
+                    <p>4</p>
+                    <p>
+                        Donec facilisis, elit et consectetur posuere, justo augue maximus quam, vitae tincidunt leo neque at libero. Etiam ornare a eros efficitur vulputate. Mauris ex est, maximus vel fringilla sed, lacinia et magna.
+                    </p>
+                </div>
+        </article>
+
+    </main>
+
+</body>
+
+</html>
